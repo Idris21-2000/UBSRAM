@@ -10,6 +10,12 @@ class UssdController extends Controller
 {
     public function handle(Request $request)
     {
+            // Validate required Africa's Talking parameters first
+    $requiredParams = ['phoneNumber', 'sessionId', 'text'];
+    
+    if (!$request->has($requiredParams)) {
+        return response("Invalid USSD request - missing parameters", 400);
+    }
         $sessionId = $request->input("sessionId");
         $serviceCode = $request->input("serviceCode");
         $phoneNumber = $request->input("phoneNumber");
