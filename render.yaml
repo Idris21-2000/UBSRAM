@@ -15,7 +15,7 @@ services:
       - key: APP_KEY
         value: base64:hKTy52Qq096PZYf4H0AlBD7nBzzPO235uK2F0DzvHMw=
       - key: APP_URL
-        value: https://ussd-bsfram-app.onrender.com # Update this later after deployment
+        value: https://ussdbasedfram.onrender.com
       - key: DB_CONNECTION
         value: mysql
       - key: DB_HOST
