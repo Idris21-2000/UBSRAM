@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: ussd-bsfram-app
+    env: docker
+    plan: free
+    region: oregon # or change based on your preferred region
+    dockerfilePath: ./Dockerfile
+    buildCommand: ""
+    startCommand: apache2-foreground
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        value: base64:hKTy52Qq096PZYf4H0AlBD7nBzzPO235uK2F0DzvHMw=
+      - key: APP_URL
+        value: https://ussd-bsfram-app.onrender.com # Update this later after deployment
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: sql7.freesqldatabase.com
+      - key: DB_PORT
+        value: 3306
+      - key: DB_DATABASE
+        value: sql7774111
+      - key: DB_USERNAME
+        value: sql7774111
+      - key: DB_PASSWORD
+        value: 9kRYrv2WcB
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: LOG_CHANNEL
+        value: stack
