@@ -34,5 +34,11 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    
+    'africastalking' => [
+    'username' => env('AFRICASTALKING_USERNAME', 'sandbox'),
+    'key' => env('AFRICASTALKING_API_KEY'),
+    ],
+
 
 ];
